@@ -1,1 +1,1 @@
-
+The objective of this project is to design and implement a relational database for an Uber-like ride-hailing system. The database should manage drivers, riders, vehicles, trips, payments, and ratings while supporting queries to track trips, fares, payments, and feedback
