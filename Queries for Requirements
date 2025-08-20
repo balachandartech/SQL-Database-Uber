@@ -1,1 +1,30 @@
+1.SELECT t.trip_id, r.name AS rider_name, d.name AS driver_name, 
+       t.pickup, t.drop_loc, t.fare, t.status
+FROM Trips t
+JOIN Riders r ON t.rider_id = r.rider_id
+JOIN Drivers d ON t.driver_id = d.driver_id
+WHERE t.status = 'Completed';
 
+2.SELECT d.name AS driver_name, SUM(t.fare) AS total_earnings
+FROM Trips t
+JOIN Drivers d ON t.driver_id = d.driver_id
+WHERE t.status = 'Completed'
+GROUP BY d.name;
+
+3.SELECT DISTINCT r.name AS rider_name, r.city
+FROM Trips t
+JOIN Riders r ON t.rider_id = r.rider_id
+WHERE t.pickup LIKE '%Chennai%' OR t.drop_loc LIKE '%Chennai%';
+
+4.SELECT d.name AS driver_name, AVG(rat.stars) AS avg_rating
+FROM Ratings rat
+JOIN Drivers d ON rat.driver_id = d.driver_id
+GROUP BY d.name;
+
+5.SELECT p.payment_id, r.name AS rider_name, d.name AS driver_name, 
+       p.amount, p.method, p.status
+FROM Payments p
+JOIN Trips t ON p.trip_id = t.trip_id
+JOIN Riders r ON t.rider_id = r.rider_id
+JOIN Drivers d ON t.driver_id = d.driver_id
+WHERE p.status = 'Pending';
