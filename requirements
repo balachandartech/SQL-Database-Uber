@@ -1,1 +1,5 @@
-
+1. Show the list of all completed trips with rider and driver names.
+2. Find the total earnings (sum of fares) for each driver.
+3. Show all riders who took trips in Chennai.
+4. Find the average rating given to each driver.
+5. List all pending payments with rider and driver details.
